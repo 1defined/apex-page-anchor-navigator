@@ -83,6 +83,8 @@ Configure these in Page Designer when you select the PAN region:
 | **Show Parent Highlight** | Yes/No | `Yes` | Highlight parent items when a child is active |
 | **Indicator Color** | Color | `#2563eb` | Color of the active indicator on the track |
 | **Track Color** | Color | `#d1d5db` | Color of the vertical track line |
+| **Text Color** | Color | `#374151` | Color of the text |
+| **Show Overflow** | Yes/No | `Yes` | Show parent region overflow |
 
 ## Example Page Structure
 
@@ -110,6 +112,7 @@ The plugin uses CSS custom properties. Override them in your page or theme CSS:
 #page-pan {
     --pan-indicator-color: #e11d48;  /* Rose */
     --pan-track-color: #e5e7eb;
+    --pan-text-color: #374151;
     --pan-animation-speed: 300ms;
 }
 ```
