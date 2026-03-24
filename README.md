@@ -21,6 +21,7 @@ A **Template Component Plug-in** for Oracle APEX that renders a sticky sidebar t
 | Light Theme | Dark Theme |
 |---|---|
 | ![Light](docs/light.png) | ![Dark](docs/dark.png) |
+| ![Light](docs/light.gif) | ![Dark](docs/dark.gif) |
 
 ## Requirements
 
