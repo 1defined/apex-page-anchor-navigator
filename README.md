@@ -9,7 +9,7 @@ A **Template Component Plug-in** for Oracle APEX that renders a sticky sidebar t
 
 - 🔗 **Automatic PAN generation** from page regions using CSS classes
 - 📍 **Scroll-aware highlighting** — active section updates as you scroll
-- 🎨 **Configurable colors** — indicator and track colors via plugin attributes
+- 🎨 **Configurable colors** — indicator, track colors and text-color via plugin attributes
 - 🔒 **XSS-safe** — DOM-based rendering with input sanitization (no `innerHTML`)
 - 📐 **Nested levels** — unlimited depth via `.js-pan-N` classes
 - 🏷️ **Custom labels** — override region titles with `data-js-pan-label`
@@ -26,7 +26,6 @@ A **Template Component Plug-in** for Oracle APEX that renders a sticky sidebar t
 ## Requirements
 
 - Oracle APEX **21.2** or higher (Template Component Plug-in support)
-- For APEX 19.2–21.1, see the [Region Plug-in version](#legacy-version-apex-192)
 
 ## Installation
 
@@ -84,7 +83,7 @@ Configure these in Page Designer when you select the PAN region:
 | **Indicator Color** | Color | `#2563eb` | Color of the active indicator on the track |
 | **Track Color** | Color | `#d1d5db` | Color of the vertical track line |
 | **Text Color** | Color | `#374151` | Color of the text |
-| **Show Overflow** | Yes/No | `Yes` | Show parent region overflow |
+| **Show Overflow** | Yes/No | `Yes` | Show parent region scroll overflow |
 
 ## Example Page Structure
 
@@ -179,5 +178,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## Acknowledgments
 
-- Built with [Oracle APEX](https://apex.oracle.com/)
+- Built with [Oracle APEX]([https://apex.oracle.com/](https://www.oracle.com/apex/))
 - Inspired by documentation navigation patterns from Ant Design, React, and MDN
