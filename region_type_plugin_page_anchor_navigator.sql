@@ -74,32 +74,21 @@ wwv_flow_imp_shared.create_plugin(
 '    sys.htp.p(''    </div>'');',
 '    sys.htp.p(''    <ul id="pan-list"></ul>'');',
 '    sys.htp.p(''</nav>'');',
-'',
-'sys.htp.p(''<!-- DEBUG: off='' || p_region.attributes.get_varchar2(''scroll_offset'')',
-'    || '' ind='' || p_region.attributes.get_varchar2(''indicator_color'') || '' -->'');',
 'end render;'))
 ,p_api_version=>3
 ,p_render_function=>'render'
 ,p_substitute_attributes=>true
-,p_version_scn=>45281212830627
+,p_version_scn=>45281492784078
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>'Designed to keep control over big forms, documentations and pages that have a lot of content.'
 ,p_version_identifier=>'1.0'
 ,p_files_version=>39
-,p_created_on=>wwv_flow_imp.dz('20260322235223Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324013751Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attr_group(
  p_id=>wwv_flow_imp.id(13479964992360429)
 ,p_plugin_id=>wwv_flow_imp.id(13389925044587127)
 ,p_title=>'Colors'
 ,p_display_sequence=>20
-,p_created_on=>wwv_flow_imp.dz('20260323142330Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323142330Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13390494752582590)
@@ -115,10 +104,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_examples=>'100'
 ,p_help_text=>'How many px from top before a section is "active"'
-,p_created_on=>wwv_flow_imp.dz('20260322235309Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323155405Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13390752756580229)
@@ -134,10 +119,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_is_translatable=>false
 ,p_examples=>'200'
 ,p_help_text=>'Indicator slide speed in ms'
-,p_created_on=>wwv_flow_imp.dz('20260322235332Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323155418Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13391019176577875)
@@ -152,10 +133,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_default_value=>'Y'
 ,p_is_translatable=>false
 ,p_help_text=>'Whether parent items highlight when child is active'
-,p_created_on=>wwv_flow_imp.dz('20260322235356Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323155430Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13391385567576584)
@@ -172,10 +149,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_attribute_group_id=>wwv_flow_imp.id(13479964992360429)
 ,p_examples=>'#2563eb'
 ,p_help_text=>'Indicator bar color'
-,p_created_on=>wwv_flow_imp.dz('20260322235409Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323155534Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13391618363574844)
@@ -192,10 +165,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_attribute_group_id=>wwv_flow_imp.id(13479964992360429)
 ,p_examples=>'#d1d5db'
 ,p_help_text=>'Color of the track'
-,p_created_on=>wwv_flow_imp.dz('20260322235426Z')
-,p_updated_on=>wwv_flow_imp.dz('20260323155543Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13675834232584959)
@@ -212,10 +181,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_attribute_group_id=>wwv_flow_imp.id(13479964992360429)
 ,p_examples=>'#374151'
 ,p_help_text=>'Color of the text displayed for your region labels'
-,p_created_on=>wwv_flow_imp.dz('20260324005245Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324005245Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(13690063856398381)
@@ -230,10 +195,6 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_default_value=>'Y'
 ,p_is_translatable=>false
 ,p_help_text=>'The parent region of the right/left column template has "overflow: auto" and it may display a undesirable scrollbar. To hide it, turn off.'
-,p_created_on=>wwv_flow_imp.dz('20260324012351Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324012938Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 end;
 /
@@ -350,10 +311,6 @@ wwv_flow_imp_shared.create_plugin_file(
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_imp.varchar2_to_blob(wwv_flow_imp.g_varchar2_table)
-,p_created_on=>wwv_flow_imp.dz('20260324013751Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324013751Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 end;
 /
@@ -387,10 +344,6 @@ wwv_flow_imp_shared.create_plugin_file(
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_imp.varchar2_to_blob(wwv_flow_imp.g_varchar2_table)
-,p_created_on=>wwv_flow_imp.dz('20260324010823Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324010823Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 end;
 /
@@ -420,10 +373,6 @@ wwv_flow_imp_shared.create_plugin_file(
 ,p_mime_type=>'text/css'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_imp.varchar2_to_blob(wwv_flow_imp.g_varchar2_table)
-,p_created_on=>wwv_flow_imp.dz('20260324010823Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324010823Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 end;
 /
@@ -486,10 +435,6 @@ wwv_flow_imp_shared.create_plugin_file(
 ,p_mime_type=>'text/javascript'
 ,p_file_charset=>'utf-8'
 ,p_file_content=>wwv_flow_imp.varchar2_to_blob(wwv_flow_imp.g_varchar2_table)
-,p_created_on=>wwv_flow_imp.dz('20260324013751Z')
-,p_updated_on=>wwv_flow_imp.dz('20260324013751Z')
-,p_created_by=>'BRUNO'
-,p_updated_by=>'BRUNO'
 );
 end;
 /

@@ -43,7 +43,6 @@
 #pan-list a {
     display: block;
     padding: 5px 10px 5px 12px;
-    color: #6b7280;
     text-decoration: none;
     transition: color 0.15s ease;
     line-height: 1.6;
@@ -51,6 +50,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
+    color: var(--pan-text-color, #374151);
 }
 
 #pan-list a:hover {
@@ -68,7 +68,7 @@
 }
 
 #pan-list li[data-level="0"] a {
-    color: #374151;
+    color: var(--pan-text-color, #374151);
     font-weight: 500;
 }
 

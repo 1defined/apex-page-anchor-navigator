@@ -6,18 +6,29 @@
     var indicator = document.getElementById("pan-indicator");
     if (!panNav || !panList) return;
 
+   
     // Read plugin attributes
     var config = {
         scrollOffset: parseInt(panNav.getAttribute("data-scroll-offset")) || 100,
         animationSpeed: parseInt(panNav.getAttribute("data-animation-speed")) || 200,
         showParent: panNav.getAttribute("data-show-parent") !== "N",
         indicatorColor: panNav.getAttribute("data-indicator-color") || "#2563eb",
-        trackColor: panNav.getAttribute("data-track-color") || "#d1d5db"
+        trackColor: panNav.getAttribute("data-track-color") || "#d1d5db",
+        textColor: panNav.getAttribute("data-text-color") || "#374151",
+        showOverflow: panNav.getAttribute("data-show-overflow") !== "N"
     };
+
+    var parentScrollBody = panNav.closest(".t-Region-body");
+
+    if (parentScrollBody) {
+        parentScrollBody.style.overflow = config.showOverflow ? "visible" : "hidden";
+    };
+
 
     // Apply CSS variables
     panNav.style.setProperty("--pan-indicator-color", config.indicatorColor);
     panNav.style.setProperty("--pan-track-color", config.trackColor);
+    panNav.style.setProperty("--pan-text-color", config.textColor);
     panNav.style.setProperty("--pan-animation-speed", config.animationSpeed + "ms");
 
     // --- Whitelist sanitizer ---
@@ -53,8 +64,10 @@
     // Validate colors from attributes
     var validIndicator = sanitizeColor(config.indicatorColor);
     var validTrack = sanitizeColor(config.trackColor);
+    var validText = sanitizeColor(config.textColor);
     if (validIndicator) panNav.style.setProperty("--pan-indicator-color", validIndicator);
     if (validTrack) panNav.style.setProperty("--pan-track-color", validTrack);
+    if (validText) panNav.style.setProperty("--pan-text-color", validText);
 
     // --- Find regions ---
     var allRegions = document.querySelectorAll('[class*="js-pan"]');
@@ -148,18 +161,16 @@
         e.preventDefault();
 
         var targetId = sanitizeId(link.getAttribute("data-pan-target"));
-        if (!targetId) return;
-
-        var target = document.getElementById(targetId);
+        var target = targetId && document.getElementById(targetId);
         if (!target) return;
+
+        var anchor = target.querySelector(".t-Region-header, .t-Region-title") || target;
 
         isManualScroll = true;
         setActive(targetId);
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        anchor.scrollIntoView({ behavior: "smooth", block: "start" });
 
-        setTimeout(function() {
-            isManualScroll = false;
-        }, 800);
+        setTimeout(function() { isManualScroll = false; }, 800);
     });
 
     function setActive(id) {
@@ -224,20 +235,33 @@
         indicator.style.height = (bottom - top) + "px";
     }
 
-    function onScroll() {
-        if (isManualScroll) return;
-        var currentId = null;
+function onScroll() {
+    if (isManualScroll) return;
 
-        for (var i = regions.length - 1; i >= 0; i--) {
-            var rect = regions[i].getBoundingClientRect();
-            if (rect.top <= config.scrollOffset) {
-                currentId = regions[i].id;
-                break;
-            }
-        }
-
-        if (currentId) setActive(currentId);
+    var nearBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 80);
+    if (nearBottom) {
+        setActive(regions[regions.length - 1].id);
+        return;
     }
+
+    var currentId = null;
+
+    for (var i = regions.length - 1; i >= 0; i--) {
+        // Use header if available, fallback to region root
+        var anchor = regions[i].querySelector(".t-Region-header, .t-Region-title") || regions[i];
+        var rect = anchor.getBoundingClientRect();
+        if (rect.top <= config.scrollOffset) {
+            currentId = regions[i].id;
+            break;
+        }
+    }
+
+    if (!currentId && window.scrollY > 10) {
+        currentId = regions[0].id;
+    }
+
+    if (currentId) setActive(currentId);
+}
 
     var scrollTimer;
     window.addEventListener("scroll", function() {
