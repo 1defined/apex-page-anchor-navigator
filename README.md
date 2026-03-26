@@ -35,6 +35,8 @@ A **Template Component Plug-in** for Oracle APEX that renders a sticky sidebar t
 4. Select the downloaded `.sql` file
 5. Follow the wizard to complete the import
 
+> **Important:** The CSS and JS files **do not have to be downloaded**. The .sql file already will install those files.
+
 ## Quick Start
 
 ### 1. Add the PAN Region

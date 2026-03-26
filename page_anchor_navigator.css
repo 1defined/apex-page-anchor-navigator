@@ -1,0 +1,79 @@
+#page-pan {
+    position: sticky;
+    top: 48px;
+    max-height: calc(100vh - 100px);
+    overflow: visible;
+    padding: 0;
+    min-width: 200px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+}
+
+.pan-track {
+    position: relative;
+    width: 2px;
+    background: var(--pan-track-color, #d1d5db);
+    flex-shrink: 0;
+}
+
+.pan-track-indicator {
+    position: absolute;
+    left: 0;
+    width: 2px;
+    background: var(--pan-indicator-color, #2563eb);
+    border-radius: 1px;
+    transition: top var(--pan-animation-speed, 200ms) ease, 
+                height var(--pan-animation-speed, 200ms) ease;
+}
+
+#pan-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+#pan-list li {
+    margin: 0;
+    padding: 0;
+}
+
+#pan-list a {
+    display: block;
+    padding: 5px 10px 5px 12px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    line-height: 1.6;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+#pan-list a:hover {
+    color: #111827;
+}
+
+#pan-list a.is-current {
+    color: var(--pan-indicator-color, #2563eb);
+    font-weight: 600;
+}
+
+#pan-list a.is-current-parent {
+    color: var(--pan-indicator-color, #2563eb);
+    font-weight: 500;
+}
+
+#pan-list li[data-level="0"] a {
+    color: #374151;
+    font-weight: 500;
+}
+
+#pan-list li[data-level="0"] a.is-current,
+#pan-list li[data-level="0"] a.is-current-parent {
+    color: var(--pan-indicator-color, #2563eb);
+    font-weight: 600;
+}
